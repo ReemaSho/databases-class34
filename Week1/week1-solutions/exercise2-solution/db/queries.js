@@ -15,7 +15,6 @@ const databaseWorldQuery = () => {
     };
 
     for (const query in queries) {
-        console.log(queries[query]);
         connection.query(queries[query], (err, result) => {
             if (err) throw err;
             console.log(result);
