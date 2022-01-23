@@ -1,6 +1,5 @@
 import connection from "./connect.js";
 import tables from "./tables-schema.js";
-import insertRecords from "./tables-records.js";
 
 const createTables = () => {
     connection.changeUser({ database: "meetup" }, (err) => {
@@ -12,7 +11,6 @@ const createTables = () => {
             console.log(`table ${table}  is created`);
         });
     }
-    insertRecords();
 };
 
 export default createTables;
