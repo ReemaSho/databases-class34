@@ -7,7 +7,7 @@ const databaseWorldQuery = () => {
         sqlQuery3: "SELECT name ,population FROM city WHERE population BETWEEN 500000 AND 1000000",
         sqlQuery4: "SELECT name  AS EuropeanCountry FROM country WHERE continent ='Europe'",
         sqlQuery5: "SELECT * FROM country ORDER BY SurfaceArea DESC",
-        sqlQuery6: "WITH countryCode AS (SELECT code FROM country WHERE name = 'Netherlands') SELECT name AS DutchCity FROM city ,countryCode WHERE city.countryCode = countryCode.code",
+        sqlQuery6: "SELECT name AS DutchCity FROM city WHERE countryCode in (SELECT code FROM country WHERE name = 'Netherlands' )",
         sqlQuery7: "SELECT population AS RotterdamPopulation FROM city WHERE name = 'Rotterdam'",
         sqlQuery8: "SELECT name AS topSurfaceCountries FROM country ORDER BY SurfaceArea DESC LIMIT 10",
         sqlQuery9: "SELECT name As mostPopulatedCities FROM city ORDER BY population DESC LIMIT 10",
@@ -22,4 +22,5 @@ const databaseWorldQuery = () => {
     }
 };
 
-export default databaseWorldQuery;
+databaseWorldQuery();
+connection.end();
