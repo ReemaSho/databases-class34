@@ -2,11 +2,11 @@ import connection from "./db/connect.js";
 import createDB from "./db/createDB.js";
 import insertRecords from "./db/tables-records.js";
 import createTables from "./db/create-tables.js";
-const executeMysql = () => {
+const populateDatabase = () => {
     createDB();
     createTables();
     insertRecords();
 };
 
-executeMysql();
+populateDatabase();
 connection.end();
