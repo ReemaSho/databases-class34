@@ -47,7 +47,6 @@ const seedDatabase = async() => {
                 });
             });
         };
-
         insertFunction(authorsRecords);
         insertFunction(researchPapersRecords);
         insertFunction(authorPapersRecords);
@@ -71,7 +70,6 @@ const seedDatabase = async() => {
         console.log(error);
         connection.end();
     }
-
     connection.end();
 };
 seedDatabase();
