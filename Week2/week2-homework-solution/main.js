@@ -1,10 +1,9 @@
 import mysql from "mysql";
 import util from "util";
-import queries from "./queries.js";
+import { queries, SQLMentorRecords } from "./queries.js";
 
 import {
     authorsRecords,
-    SQLMentorRecords,
     researchPapersRecords,
     authorPapersRecords,
 } from "./dataRecords.js";

@@ -108,22 +108,6 @@ const authorsRecords = {
     ],
 };
 
-const SQLMentorRecords = [
-    "UPDATE authors SET mentor = 1 WHERE author_no = 1",
-    "UPDATE authors SET mentor = 5 WHERE author_no = 3",
-    "UPDATE authors SET mentor = 11 WHERE author_no = 4",
-    "UPDATE authors SET mentor = 14 WHERE author_no = 5",
-    "UPDATE authors SET mentor = 2 WHERE author_no = 6",
-    "UPDATE authors SET mentor = 3 WHERE author_no = 7",
-    "UPDATE authors SET mentor = 14 WHERE author_no = 8",
-
-    "UPDATE authors SET mentor = 4 WHERE author_no = 10",
-    "UPDATE authors SET mentor = 2 WHERE author_no = 11",
-    "UPDATE authors SET mentor = 6 WHERE author_no = 12",
-    "UPDATE authors SET mentor = 8 WHERE author_no = 13",
-    "UPDATE authors SET mentor = 9 WHERE author_no = 15",
-];
-
 const researchPapersRecords = {
     table_name: "research_Papers",
     records: [{
@@ -201,7 +185,6 @@ const researchPapersRecords = {
             conference: "Conference Creativity ",
             publish_date: "2017-05-28",
         },
-
         {
             paper_title: "The best music projects of 2020",
             conference: "The Expert Conference ",
@@ -286,9 +269,20 @@ const authorPapersRecords = {
             author_no: 1,
             paper_no: 1,
         },
-
+        {
+            author_no: 4,
+            paper_no: 1,
+        },
         {
             author_no: 1,
+            paper_no: 2,
+        },
+        {
+            author_no: 10,
+            paper_no: 2,
+        },
+        {
+            author_no: 8,
             paper_no: 2,
         },
         {
@@ -307,10 +301,17 @@ const authorPapersRecords = {
             author_no: 10,
             paper_no: 4,
         },
-
+        {
+            author_no: 11,
+            paper_no: 4,
+        },
         {
             author_no: 8,
             paper_no: 5,
+        },
+        {
+            author_no: 1,
+            paper_no: 6,
         },
         {
             author_no: 8,
@@ -342,6 +343,10 @@ const authorPapersRecords = {
         },
         {
             author_no: 7,
+            paper_no: 12,
+        },
+        {
+            author_no: 5,
             paper_no: 12,
         },
         {
@@ -397,6 +402,14 @@ const authorPapersRecords = {
             paper_no: 25,
         },
         {
+            author_no: 2,
+            paper_no: 20,
+        },
+        {
+            author_no: 14,
+            paper_no: 25,
+        },
+        {
             author_no: 11,
             paper_no: 26,
         },
@@ -405,8 +418,16 @@ const authorPapersRecords = {
             paper_no: 27,
         },
         {
+            author_no: 7,
+            paper_no: 28,
+        },
+        {
             author_no: 9,
             paper_no: 28,
+        },
+        {
+            author_no: 11,
+            paper_no: 29,
         },
         {
             author_no: 13,
@@ -419,9 +440,4 @@ const authorPapersRecords = {
     ],
 };
 
-export {
-    authorsRecords,
-    SQLMentorRecords,
-    authorPapersRecords,
-    researchPapersRecords,
-};
+export { authorsRecords, authorPapersRecords, researchPapersRecords };
