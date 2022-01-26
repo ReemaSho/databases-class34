@@ -1,3 +1,14 @@
+const SQLCreateDatabaseAndTables = [
+    "DROP DATABASE IF EXISTS  universities_data",
+    "CREATE DATABASE universities_data",
+    "USE universities_data",
+    "CREATE TABLE IF NOT EXISTS authors(author_no int AUTO_INCREMENT Primary Key, author_name VARCHAR(100), university VARCHAR (225), date_of_birth DATE, h_index int, gender ENUM('M','F'))",
+    "ALTER TABLE authors ADD mentor int ",
+    "ALTER TABLE authors ADD FOREIGN KEY(mentor) REFERENCES authors(author_no)",
+    "CREATE TABLE IF NOT EXISTS research_Papers(paper_id int AUTO_INCREMENT Primary Key, paper_title VARCHAR(100), conference VARCHAR(225), publish_date DATETIME)",
+    "CREATE TABLE IF NOT EXISTS author_Papers_junction(author_no int NOT NULL , paper_no int NOT NULL , CONSTRAINT  FK_author FOREIGN KEY(author_no) REFERENCES authors(author_no), CONSTRAINT FK_papers FOREIGN KEY(paper_no) REFERENCES  research_Papers(paper_id))",
+];
+
 const SQLMentorRecords = [
     "UPDATE authors SET mentor = 1 WHERE author_no = 1",
     "UPDATE authors SET mentor = 5 WHERE author_no = 3",
@@ -32,4 +43,4 @@ const queries = [
     "SELECT university , MAX(h_index), MIN(h_index) from authors  GROUP BY university",
 ];
 
-export { queries, SQLMentorRecords };
+export { SQLCreateDatabaseAndTables, SQLMentorRecords, queries };
