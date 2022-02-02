@@ -13,8 +13,6 @@ const connection = mysql.createConnection({
 //-- "SELECT Population FROM Country WHERE Name ='' OR ''='' AND code ='' OR ''=''",
 //-- "SELECT Population FROM Country WHERE Name LIKE '%';-- AND code ='the value here doesn't matter' "
 
-//"SELECT Population FROM Country WHERE Name = 'x' OR 1=1 AND code = 'x' OR 1=1 UNION SELECT name from country ",
-
 // function getPopulation(Country, name, code, cb) {
 //     connection.query(
 //         `SELECT Population FROM ${Country} WHERE Name = ${name} and code = ${code}`,
