@@ -14,7 +14,6 @@ const seedDatabase = async() => {
             District: "Swaidaa",
             Population: 14784,
         };
-
         const newCity = await client.db("world").collection("city").insertOne(city);
         console.log(newCity);
         //
@@ -22,17 +21,17 @@ const seedDatabase = async() => {
         const updateCity = await client
             .db("world")
             .collection("city")
-            .updateMany({ Name: "Shahba" }, { $set: { Population: 20549 } });
+            .findOneAndUpdate({ Name: "Shahba" }, { $set: { Population: 20549 } });
         console.log(updateCity);
         //
-        // read-record
+        // read-record-by-name
         const findCityName = await client
             .db("world")
             .collection("city")
             .find({ Name: "Shahba" })
             .toArray();
         console.log(findCityName);
-        //
+        //  read-record-by-city-code
         const findCityCode = await client
             .db("world")
             .collection("city")
@@ -44,7 +43,7 @@ const seedDatabase = async() => {
         const deleteCity = await client
             .db("world")
             .collection("city")
-            .deleteMany({ Name: "Shahba" });
+            .deleteOne({ Name: "Shahba" });
         console.log(deleteCity);
     } catch (error) {
         console.error(error);
